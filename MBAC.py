@@ -10,7 +10,7 @@ x='''
 	press 5 to shutdown your system
 	press 6 to check internet connectio in pc
 	press 7 to get the list of ip on network
-	
+	press 8 to reboot your system
   '''
 print (x)
 
@@ -38,7 +38,7 @@ elif choice == '5':
 	if check == 'n':
 		exit()
 	else: 
-		os.system("shutdown /s /t 1")
+		os.system("shutdown -s -t 1")
 
 elif choice == '6' :	
 	urllib.urlopen("https://www.google.com/")
@@ -46,6 +46,13 @@ elif choice == '6' :
 elif choice == '7' :
 	ip_adr = raw_input("enter the ip of network ")
 	os.system("nmap -sn " + ip_adr)
+	
+elif choice == '8':
+	check = raw_input("are you sure y/n")
+	if check == 'n':
+		exit()
+	else: 
+		os.system("shutdown -r -t 1")
 	
 	
 		
