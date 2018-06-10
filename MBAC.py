@@ -11,6 +11,7 @@ x='''
 	press 6 to check internet connectio in pc
 	press 7 to get the list of ip on network
 	press 8 to reboot your system
+	press 9 to logout your system
   '''
 print (x)
 
@@ -54,7 +55,12 @@ elif choice == '8':
 	else: 
 		os.system("shutdown -r -t 1")
 	
-	
+elif choice == '9':
+	check = raw_input("are you sure y/n")
+	if check == 'n':
+		exit()
+	else: 
+		os.system("pkill -KILL -u username")	
 		
 else:
 	print("wrong option")	 
